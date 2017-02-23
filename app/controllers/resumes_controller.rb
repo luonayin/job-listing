@@ -8,7 +8,7 @@ class ResumesController < ApplicationController
 
   def create
     @job = Job.find(params[:job_id])
-    @resume = Rresume.new(resume_params)
+    @resume = Resume.new(resume_params)
     @resume.job = @job
     @resume.user = current_user
 
@@ -23,6 +23,6 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:content)
+    params.require(:resume).permit(:content, :attachment)
   end
 end
