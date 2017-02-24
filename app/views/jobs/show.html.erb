@@ -1,7 +1,15 @@
 <h1> <%= @job.title %> </h1>
-<p>
+<br><br>
+<div class="row">
+  <div class="col-md-9">
+<dl class="dl-horizontal">
+  <dt>Description</dt>
+  <dd class="bg-info">
   <%= simple_format(@job.description) %>
-</p>
+</dd>
+</div>
+</div>
+</dl>
 <div class="text-center">
   <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
 </div>
