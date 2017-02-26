@@ -2,14 +2,23 @@
 <br><br>
 <div class="row">
   <div class="col-md-9">
+
 <dl class="dl-horizontal">
   <span class="job1"><dt>Description</dt></span>
   <dd class="bg-info">
   <%= simple_format(@job.description) %>
-</dd>
-</div>
-</div>
+ </dd>
 </dl>
+
+ <dl class="dl-horizontal">
+   <span class="job1"><dt>联系电话</dt></span>
+   <dd class="bg-info">
+   <%= simple_format(@job.contact_phone) %>
+  </dd>
+</dl>
+</div>
+</div>
+
 <div class="text-center">
   <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
 </div>

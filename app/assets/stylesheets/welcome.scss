@@ -1,3 +1,100 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#paromo {
+  text-align: center;
+  padding: 40px;
+  background: url(http://www.3westclub.com/documents/10180/1870730/Team-Meeting.jpg) no-repeat;
+  background-size: cover;
+
+}
+#paromo .jumbotron {
+  border-radius: 20px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.decorate-line {
+    margin: 40px auto;
+    width: 5pc;
+    height: 5px;
+    background-color: #aab2bd;
+}
+
+.customer-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.logo-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.customer-logo{
+  height: 30px;
+  margin-bottom: 60px
+}
+
+element.style {
+    visibility: hidden;
+    z-index: -100;
+    position: fixed;
+    top: 1186.48px;
+    left: 0px;
+    overflow: hidden;
+    transform: translate3d(0px, 0px, 0px);
+    height: 1035px;
+    width: 421px;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+img {
+    vertical-align: middle;
+}
+
+
+Inherited from div.parallax-mirror
+Style Attribute {
+    visibility: hidden;
+    z-index: -100;
+    position: fixed;
+    top: 1186.48px;
+    left: 0px;
+    overflow: hidden;
+    transform: translate3d(0px, 0px, 0px);
+    height: 1035px;
+    width: 421px;
+}
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.homePageIcon {
+    border: 5px solid #f1f1f1;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+}
+
+
+
+.homePageIcon > img {
+    margin-left: 31px;
+    margin-top: 31px;
+    width: 68px;
+}
