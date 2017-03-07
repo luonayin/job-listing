@@ -2,6 +2,8 @@
   <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
 </div>
 
+
+
 <div class="dropdown clearfix pull-right">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     排序
@@ -9,13 +11,13 @@
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
     <li>
-      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+      <%= sort_link @q, :wage_lower_bound, "薪资下限排序" %>
     </li>
     <li>
-      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+      <%= sort_link @q, :wage_upper_bound, "薪资上限排序" %>
     </li>
     <li>
-      <%= link_to("按照发表时间排序", jobs_path ) %>
+      <%= sort_link @q, :created_at, "创建时间顺序" %>
     </li>
   </ul>
 </div>
