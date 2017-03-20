@@ -12,22 +12,22 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = case params[:order]
-    when 'by_lower_bound'
-      Job.published.order('wage_lower_bound DESC')
-    when 'by_upper_bound'
-      Job.published.order('wage_upper_bound DESC')
+    if params[:category].blank?
+      @jobs = Job.where(is_hidden: false).recent
     else
-      Job.published.recent
+      @category_id = Category.find_by(name: params[:category]).id
+      @jobs = Job.where(:category_id => @category_id).recent
     end
   end
 
   def new
     @job = Job.new
+    @categorys = Category.all.map { |c| [c.name, c.id]}
   end
 
   def create
     @job = Job.new(job_params)
+    @job.category_id = params[:category_id]
     if @job.save
       redirect_to jobs_path
     else
@@ -61,6 +61,11 @@ class JobsController < ApplicationController
     end
   end
 
+  def category
+    @category_id = Category.find_by(name: params[:category]).id
+    @jobs = Job.where(category_id: @category_id).order("created_at DESC")
+  end
+
 
   protected
 
@@ -77,7 +82,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :category_id)
   end
 
 end

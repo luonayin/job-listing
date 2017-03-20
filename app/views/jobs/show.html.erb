@@ -1,6 +1,7 @@
 <h1> <%= @job.title %> </h1>
 <p>
   <%= simple_format(@job.description) %>
+  <%= @job.category.name %>
 
 </p>
 <div class="text-center">
