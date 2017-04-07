@@ -7,14 +7,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Dosis|Source+Sans+Pro" rel="stylesheet">
 </head>
 <body>
 
 
+<br>
+<br>
 
 <div class="jumbotron text-center">
+  <div class="nav-title">
   <h1>Company</h1>
   <p>We specialize in blablabla</p>
+
   <div class="form-inline">
         <%= form_tag search_jobs_path , :method => :get  do %>
         <div class="input-group" id="search-id" >
@@ -24,7 +29,7 @@
               <i class="glyphicon glyphicon-search"></i>
             </button>
           </div>
-
+</div>
         </div>
         <% end %>
       </div>

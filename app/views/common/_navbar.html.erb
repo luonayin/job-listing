@@ -1,27 +1,27 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Job Listing </a>
     </div>
 
+      <div class="nav nav-pills navbar-left navbar-fixed-top" >
+
+      <% Category.all.each do |category| %>
+    <li>
+      <%= link_to category.name, jobs_path(category: category.name) %>
+    </li>
+      <% end %>
+
+    </div>
+
     <!-- Collect the nav links, form, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">工作分类<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
+      <ul class="nav navbar-nav navbar-right ">
 
-        <% Category.all.each do |category| %>
-        <li>
-        <%= link_to category.name, jobs_path(category: category.name) %>
-      </li>
-        <% end %>
-      </ul>
-      </li>
         <% if !current_user %>
-        <li><%= link_to("注册", new_user_registration_path) %> </li>
-        <li><%= link_to("登入", new_user_session_path) %></li>
+        <li class="sign-up"><%= link_to("注册", new_user_registration_path) %> </li>
+        <li class="login"><%= link_to("登入", new_user_session_path) %></li>
         <% else %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -38,6 +38,7 @@
         <% end %>
       </ul>
     </div>
+
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->

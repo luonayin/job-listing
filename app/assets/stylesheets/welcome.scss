@@ -5,12 +5,40 @@
 
 
 .jumbotron {
-  background: url('http://ogk4z553l.bkt.clouddn.com/banner002.jpg');
-
+  background: url('http://back-2-front.co.uk/wp-content/uploads/2015/08/Team-Meeting.jpg')center center no-repeat;
   background-size: cover;
-
-  height: 800px;
+  height: 600px;
   width: 100%;
-  left: 0;
-  right: 0;
+  position: relative;
+
+}
+.login {
+
+}
+.sign-up {
+
+}
+.nav-pills {
+    font-size: 18px;
+    font-family: 'Dosis', sans-serif;
+    margin-top: 5px;
+    margin-left: 180px;
+    color: #ffffff;
+    position: fixed;
+    overflow: auto;
+
+}
+.nav {
+  font-family: 'Source Sans Pro', sans-serif;
+
+
+}
+.nav-title{
+  margin: auto;
+  padding: 50px 120px 80px 100px;
+  width: 50%;
+  height: 60%;
+  text-align: center;
+  position: relative;
+  background-color: rgba(209,209,224,0.5);
 }
