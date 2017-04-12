@@ -10,7 +10,7 @@ class ResumesController < ApplicationController
     @job = Job.find(params[:job_id])
     @resume = Resume.new(resume_params)
     @resume.job = @job
-    @resuem.user = current_user
+    @resume.user = current_user
 
     if @resume.save
       flash[:notice] = "成功提交履历"
@@ -23,7 +23,7 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:content)
+    params.require(:resume).permit(:content, :attachment)
   end
 
 end
