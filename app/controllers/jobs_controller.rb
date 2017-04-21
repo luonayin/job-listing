@@ -3,6 +3,7 @@ class JobsController < ApplicationController
 
 
   def index
+    if params[:category].blank?
     @jobs = case params[:order]
     when 'by_lower_bound'
       Job.where(is_hidden: false).order('wage_lower_bound DESC')
@@ -11,6 +12,10 @@ class JobsController < ApplicationController
     else
       Job.where(is_hidden: false).recent
     end
+  else
+    @category_id = Category.find_by(name: params[:category]).id
+    @jobs = Job.where(category_id: @category_id).recent
+  end
   end
 
   def new
