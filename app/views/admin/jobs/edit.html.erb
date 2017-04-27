@@ -4,6 +4,8 @@
 <%= f.collection_select :category_id, Category.all, :id, :name, { promit: "Choose a Category"} %>
 <%= f.input :title %>
 <%= f.input :description %>
+<%= f.input :city %>
+<%= f.input :company %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :contact_email %>

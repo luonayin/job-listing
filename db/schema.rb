@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421022135) do
+ActiveRecord::Schema.define(version: 20170422182454) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,25 @@ ActiveRecord::Schema.define(version: 20170421022135) do
     t.string   "contact_email"
     t.boolean  "is_hidden",        default: true
     t.integer  "category_id"
+    t.string   "city"
+    t.string   "company"
+    t.string   "category"
+  end
+
+  create_table "requisitions", force: :cascade do |t|
+    t.text     "step"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_requisitions_on_job_id"
+  end
+
+  create_table "responsibilities", force: :cascade do |t|
+    t.text     "step"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_responsibilities_on_job_id"
   end
 
   create_table "resumes", force: :cascade do |t|
